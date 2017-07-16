@@ -34,8 +34,9 @@ class Migrate extends AbstractMigrate
 	private function createMigrationTableIfNotExists()
 	{
 		$sql = 'show tables like "migrations"';
+		$migrations = DB::select($sql);
 
-		if (empty(DB::select($sql))) {
+		if (empty($migrations)) {
 			$sql = 'CREATE TABLE `migrations` (
 			  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
 			  `migration` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
