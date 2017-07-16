@@ -9,9 +9,9 @@ use Walker\Commands\MigrationRollback;
 class Kernel
 {
 	public $commands = [
-		Migrate::class,
-		Hello::class,
-		MigrationRollback::class,
+		'\Walker\Commands\Migrate',
+		'\Walker\Commands\Hello',
+		'\Walker\Commands\MigrationRollback',
 	];
 
 	/**
