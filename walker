@@ -1,0 +1,14 @@
+<?php
+
+include 'vendor/autoload.php';
+
+define('CONFIG_FILE', realpath('./config.php'));
+
+$kernel = new Walker\Kernel;
+
+if (count($argv) < 2) {
+	$kernel->menu();
+	exit();
+}
+
+$kernel->handle($argv[1]);
