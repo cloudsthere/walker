@@ -18,11 +18,10 @@ class Migrate extends AbstractMigrate
 
 		$migrations = [];
 		foreach (glob(config('migration_path') . '/*.php') as $migration) {
-			$migrations[filectime($migration)] = pathinfo($migration, PATHINFO_BASENAME);
+			$migrations[] = pathinfo($migration, PATHINFO_BASENAME);
 		}
-
+		
 		$migratings = array_diff($migrations, $migrated);
-		ksort($migratings, SORT_NUMERIC);
 
 		foreach ($migratings as $migrating) {
 			$migration = $this->instance($migrating);

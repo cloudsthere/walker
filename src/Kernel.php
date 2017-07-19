@@ -11,7 +11,7 @@ class Kernel
 	public $commands = [
 		'\Walker\Commands\Migrate',
 		'\Walker\Commands\Hello',
-		'\Walker\Commands\MigrationRollback',
+		'\Walker\Commands\MigrateRollback',
 	];
 
 	/**

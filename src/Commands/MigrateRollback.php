@@ -4,7 +4,7 @@ namespace Walker\Commands;
 
 use Walker\Foundation\DB;
 
-class MigrationRollback extends AbstractMigrate
+class MigrateRollback extends AbstractMigrate
 {
 	public $name = 'migrate:rollback';
 
