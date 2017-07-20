@@ -14,6 +14,7 @@ class DB
 
 			// 抛出异常
 			self::$pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+			self::$pdo->query('set names utf8');
 		}
 	}
 
