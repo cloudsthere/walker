@@ -9,7 +9,7 @@ class DB
 	public static function connect()
 	{
 		if (is_null(self::$pdo)) {
-			$dsn = 'mysql:dbname=' . \Walker\config('db_name') . ';host=' . \Walker\config('db_host');
+			$dsn = 'mysql:dbname=' . \Walker\config('db_name') . ';host=' . \Walker\config('db_host') . ';port' . \Walker\config('db_port');
 			self::$pdo = new \PDO($dsn, \Walker\config('db_user'), \Walker\config('db_passwd'));
 
 			// 抛出异常
