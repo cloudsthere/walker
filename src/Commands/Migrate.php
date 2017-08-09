@@ -17,7 +17,7 @@ class Migrate extends AbstractMigrate
 		list($batch, $migrated) = $this->migrated();
 
 		$migrations = [];
-		foreach (glob(config('migration_path') . '/*.php') as $migration) {
+		foreach (glob(\Walker\config('migration_path') . '/*.php') as $migration) {
 			$migrations[] = pathinfo($migration, PATHINFO_BASENAME);
 		}
 		

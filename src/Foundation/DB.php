@@ -9,8 +9,8 @@ class DB
 	public static function connect()
 	{
 		if (is_null(self::$pdo)) {
-			$dsn = 'mysql:dbname=' . config('db_name') . ';host=' . config('db_host');
-			self::$pdo = new \PDO($dsn, config('db_user'), config('db_passwd'));
+			$dsn = 'mysql:dbname=' . \Walker\config('db_name') . ';host=' . \Walker\config('db_host');
+			self::$pdo = new \PDO($dsn, \Walker\config('db_user'), \Walker\config('db_passwd'));
 
 			// 抛出异常
 			self::$pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
@@ -25,7 +25,7 @@ class DB
 			$result = self::$pdo->query($sql);
 			return $fetch ? $result->fetchAll(\PDO::FETCH_ASSOC) : $result;
 		} catch (\Exception $e) {
-			line($e->getMessage());
+			\Walker\line($e->getMessage());
 			throw $e;
 		}
 	}

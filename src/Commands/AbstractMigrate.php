@@ -6,7 +6,7 @@ class AbstractMigrate
 {
 	protected function instance($migration)
 	{
-		include config('migration_path') . '/' . $migration;
+		include \Walker\config('migration_path') . '/' . $migration;
 		$segments = array_slice(explode('_', explode('.', $migration)[0]), 4);
 		$class = implode('', array_map('ucfirst', $segments));
 		return new $class;
